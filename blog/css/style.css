@@ -1,4 +1,4 @@
-*{
+*{  
     box-sizing: border-box;
 }
 body{
@@ -80,3 +80,62 @@ header ul li a:hover{
 header .menu-toggle{
     display: none;
 }
+
+
+/*----------- Media queries ------------*/
+@media only screen AND (max-width:650px){
+    header{
+        position: relative;
+    }
+    header ul{
+        width: 100%;
+        background-color: #5c5c5c;
+        max-height: 0px;
+        overflow: hidden;
+    }
+    header ul li{
+      width: 100%;        
+    }
+    header ul li ul{
+        position: static;
+        width: 100%;  
+       display: block;
+       
+      }
+      header ul li ul li:hover{
+        background-color: lightblue;
+      }
+      header ul li ul li:hover a{
+          margin-left: 35px;
+          background-color: inherit;
+      }
+
+      header .menu-toggle{
+        display: block;
+        right: 0.5em;
+        top: 15px;
+        font-size: 2.2em;
+        position: absolute;
+    }
+
+    header .menu-toggle:hover{
+        cursor: pointer;
+    }
+
+    header .logo{
+        float: left;
+        height: inherit;
+        margin-left: 0.5em;   
+    }
+
+    header .logo-text{
+        font-size: 1.6em;
+        
+        margin-top: 18px;
+    }
+
+    .showing{
+        max-height: 100em;
+    }
+}
+
