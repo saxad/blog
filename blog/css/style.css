@@ -1,4 +1,5 @@
 *{  
+    
     box-sizing: border-box;
 }
 body{
@@ -6,6 +7,15 @@ body{
     padding: 0;
     background: #f6f6f6;
     font-family: sans-serif;
+}
+h1,h2,h3,h4,h5,h6{
+    font-family: sans-serif;
+    color: #444;
+    margin: 5px;
+}
+a{
+    text-decoration: none;
+    color: inherit;
 }
 
 /* ------------------------ header ---------------------------*/
@@ -58,7 +68,9 @@ header ul li ul li{
 }
 header ul li:hover ul{
     display: block;
+    z-index: 3;
 }
+
 header ul li ul li a{
     padding: 12px;
     color: #444;
@@ -81,6 +93,63 @@ header .menu-toggle{
     display: none;
 }
 
+
+/*--------------------  posts slider ---------------------------*/
+.post-slider a:hover{
+    color: #000000;
+}
+.post-slider{
+    position: relative;
+}
+.post-slider .next{   
+    position: absolute;
+    top: 50%;
+    right: 30px;
+    font-size: 2em;
+    cursor: pointer;
+}
+.post-slider .prev{   
+    position: absolute;
+    top: 50%;
+    left: 30px;
+    font-size: 2em;
+    cursor: pointer;
+}
+.post-slider .post-wrapper{
+    width: 86%;
+    height: 350px;
+    margin: 0 auto;
+    padding: 10px 0px 10px 0px ;    
+    overflow: hidden;
+}
+.post-slider .post-wrapper .post{
+    background-color: beige;
+    display: inline-block;
+    height: 330px;
+    width: 330px;
+    margin: 0 10px;
+    border-radius: 5px;
+    box-shadow:1rem 1rem 1rem 0.1rem #0a0a0a33;
+}
+.post-slider .post-wrapper .post .post-info{
+    height: 130px;
+    padding: 5px 10px;
+    
+}
+.info-title{
+    margin-bottom: 20px;
+}
+.slider-title{
+    text-align: center;
+    margin: 30px auto;
+}
+.slider-image{
+    width: 100%;
+    height: 200px;
+    
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
 
 /*----------- Media queries ------------*/
 @media only screen AND (max-width:650px){
@@ -136,6 +205,22 @@ header .menu-toggle{
 
     .showing{
         max-height: 100em;
+    }
+
+    /*----------- slider ---------------*/
+    .post-slider .next{   
+        position: absolute;
+        top: 50%;
+        right: 3px;
+        font-size: 1em;
+        cursor: pointer;
+    }
+    .post-slider .prev{   
+        position: absolute;
+        top: 50%;
+        left: 3px;
+        font-size: 1em;
+        cursor: pointer;
     }
 }
 
