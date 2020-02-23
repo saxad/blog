@@ -17,8 +17,30 @@ a{
     text-decoration: none;
     color: inherit;
 }
+a:hover{
+    color: black;
+}
+.clearfix:after{
+    content: " ";
+    display: block;
+    clear: both;
 
-/* ------------------------ header ---------------------------*/
+}
+.btn{
+    padding: .5rem 1rem;
+    background: #006666;
+    color: white;
+    border: 1px solid #006666;
+    border-radius: 5px;
+}
+.btn:hover{
+    transition: 0.5s;
+    background: white;
+    color: #006666;
+    
+
+}
+/* ----------------------------------------------- header --------------------------------------------------*/
 header{
     background-color: #000000;
     height: 66px;
@@ -68,7 +90,7 @@ header ul li ul li{
 }
 header ul li:hover ul{
     display: block;
-    z-index: 3;
+    z-index: 999;
 }
 
 header ul li ul li a{
@@ -94,7 +116,7 @@ header .menu-toggle{
 }
 
 
-/*--------------------  posts slider ---------------------------*/
+/*-------------------------------------------  posts slider --------------------------------------------------*/
 .post-slider a:hover{
     color: #000000;
 }
@@ -129,7 +151,7 @@ header .menu-toggle{
     width: 330px;
     margin: 0 10px;
     border-radius: 5px;
-    box-shadow:1rem 1rem 1rem 0.1rem #0a0a0a33;
+    box-shadow:1rem 1rem 1rem -0.5rem #0a0a0a33;
 }
 .post-slider .post-wrapper .post .post-info{
     height: 130px;
@@ -150,8 +172,58 @@ header .menu-toggle{
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
 }
+/*-------------------------------  MAIN CONTENT---------------------------------------*/
+.content{
+    width: 90%;
+    margin: 30px auto;
+    
+}
 
-/*----------- Media queries ------------*/
+.content .main-content{
+    width: 70%;
+    float: left;
+}
+
+.content .sidebar{
+    width: 30%;
+    float: left;
+    border: 1px solid blue;
+    height: 1000px;
+    margin-bottom: 100px;
+}
+.main-content .recent-post-title{
+    margin: 20px;
+}
+.main-content .post{
+    width: 95%;
+    height: 270px;
+    margin: 0 auto;
+    margin-bottom: 45px;
+    border-radius: 10px;
+    background: beige;
+    position: relative;
+    box-shadow: 1rem 1rem 1rem -1rem ;
+    
+}
+.main-content .post .post-img{
+    width: 40%;
+    height: 100%;
+    float: left;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+.main-content .post .post-preview{
+    width: 60%;
+    padding: 10px;
+    float: right;
+}
+.main-content .post .read-more{
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+}
+/*---------------------------------- Media queries -----------------------------------*/
+
 @media only screen AND (max-width:650px){
     header{
         position: relative;
@@ -205,6 +277,7 @@ header .menu-toggle{
 
     .showing{
         max-height: 100em;
+        
     }
 
     /*----------- slider ---------------*/
