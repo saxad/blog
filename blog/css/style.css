@@ -1,6 +1,7 @@
 *{  
     
     box-sizing: border-box;
+    font-family: sans-serif;
 }
 body{
     margin: 0;
@@ -40,6 +41,19 @@ a:hover{
     
 
 }
+.text-input{
+padding: .7rem 1rem;
+display: block;
+width: 100%;
+border-radius: 5px;
+color: #444;
+outline: none;
+line-height: 1.5rem;
+border: 1px solid #e0e0e0;
+font-size: 1.2em;
+}
+
+
 /* ----------------------------------------------- header --------------------------------------------------*/
 header{
     background-color: #000000;
@@ -184,13 +198,6 @@ header .menu-toggle{
     float: left;
 }
 
-.content .sidebar{
-    width: 30%;
-    float: left;
-    border: 1px solid blue;
-    height: 1000px;
-    margin-bottom: 100px;
-}
 .main-content .recent-post-title{
     margin: 20px;
 }
@@ -221,6 +228,45 @@ header .menu-toggle{
     position: absolute;
     right: 10px;
     bottom: 10px;
+}
+
+
+/*---------------------------------- SidBar -----------------------------------*/
+
+.content .sidebar{
+    width: 30%;
+    float: left;
+    height: 1000px;
+    margin-bottom: 100px;
+}
+
+.content .sidebar .section{
+    background: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+.content .sidebar .section .section-title{
+    margin: 10px 0px;
+}
+.content .sidebar .search{
+    margin-top: 80px;
+}
+.content .sidebar .topics ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border-top: 1px solid #444;
+}
+.content .sidebar .topics ul li a{
+    padding: 15px 0px;
+    border-bottom: 1px solid #e0e0e0;
+    display: block;
+    transition: 0.5s;
+}
+.content .sidebar .topics ul li a:hover{
+    padding-left: 10px;
+    transition: 0.5s;
 }
 /*---------------------------------- Media queries -----------------------------------*/
 
