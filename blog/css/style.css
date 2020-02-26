@@ -1,65 +1,99 @@
-*{  
-    
+* {
+
     box-sizing: border-box;
     font-family: sans-serif;
 }
-html, body{
+
+html,
+body {
     margin: 0;
     padding: 0;
     background: #f6f6f6;
     font-family: sans-serif;
     height: 100%;
 }
-h1,h2,h3,h4,h5,h6{
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: sans-serif;
     color: #444;
     margin: 5px;
 }
-a{
+
+a {
     text-decoration: none;
     color: inherit;
 }
-a:hover{
+
+a:hover {
     color: black;
 }
-.clearfix:after{
+
+.clearfix:after {
     content: " ";
     display: block;
     clear: both;
 
 }
-.btn{
+
+.btn {
     padding: .5rem 1rem;
     background: #006666;
     color: white;
     border: 1px solid #006666;
     border-radius: 5px;
 }
-.btn:hover{
+
+.btn:hover {
     transition: 0.5s;
     background: white;
     color: #006666;
-    
+
 
 }
-.text-input{
-padding: .7rem 1rem;
-display: block;
-width: 100%;
-border-radius: 5px;
-color: #444;
-outline: none;
-line-height: 1.5rem;
-border: 1px solid #e0e0e0;
-font-size: 1.2em;
+
+.text-input {
+    padding: .7rem 1rem;
+    display: block;
+    width: 100%;
+    border-radius: 5px;
+    color: #444;
+    outline: none;
+    line-height: 1.5rem;
+    border: 1px solid #e0e0e0;
+    font-size: 1.2em;
 }
 
-.page-wrapper{
+.page-wrapper {
     min-height: 100%;
 }
 
+.msg {
+    width: 100%;
+    margin: 5px 5px;
+    padding: 8px;
+    border-radius: 5px;
+    list-style: none;
+}
+
+.success {
+    color: #3a6e3a;
+    border: 1px solid #3a6e3a;
+    background: #bcf5bc;
+}
+
+.error {
+    color: #884b4b;
+    border: 1px solid #884b4b;
+    background: #f5bcbc;
+}
+
 /* ----------------------------------------------- header --------------------------------------------------*/
-header{
+header {
     background-color: #000000;
     height: 66px;
 
@@ -69,154 +103,173 @@ header * {
     color: beige;
 }
 
-header .logo{
+header .logo {
     float: left;
     height: inherit;
     margin-left: 2em;
 }
 
-header .logo-text{
+header .logo-text {
     margin: 10px;
     margin-top: 12px;
-    
+
 }
 
-.logo-text span{
+.logo-text span {
     color: lightcoral;
 }
 
-header ul{
+header ul {
     float: right;
     padding: 0;
     margin: 0;
     list-style: none;
     text-decoration: none;
 }
-header ul li{
+
+header ul li {
     float: left;
     position: relative;
 }
-header ul li ul{
+
+header ul li ul {
     position: absolute;
-    top:66px;
+    top: 66px;
     right: 0;
     width: 180px;
     display: none;
 }
-header ul li ul li{
+
+header ul li ul li {
     width: 100%;
 }
-header ul li:hover ul{
+
+header ul li:hover ul {
     display: block;
     z-index: 999;
 }
 
-header ul li ul li a{
+header ul li ul li a {
     padding: 12px;
     color: #444;
 }
-header ul li ul li a:hover{
+
+header ul li ul li a:hover {
     background-color: aquamarine;
 }
 
-header ul li a{
+header ul li a {
     display: block;
     text-decoration: none;
     padding: 21px;
     font-size: 1.1em;
 }
-header ul li a:hover{
+
+header ul li a:hover {
     background-color: #011000;
     transition: 0.5s;
 }
-header .menu-toggle{
+
+header .menu-toggle {
     display: none;
 }
 
 
 /*-------------------------------------------  posts slider --------------------------------------------------*/
-.post-slider a:hover{
+.post-slider a:hover {
     color: #000000;
 }
-.post-slider{
+
+.post-slider {
     position: relative;
 }
-.post-slider .next{   
+
+.post-slider .next {
     position: absolute;
     top: 50%;
     right: 30px;
     font-size: 2em;
     cursor: pointer;
 }
-.post-slider .prev{   
+
+.post-slider .prev {
     position: absolute;
     top: 50%;
     left: 30px;
     font-size: 2em;
     cursor: pointer;
 }
-.post-slider .post-wrapper{
+
+.post-slider .post-wrapper {
     width: 86%;
     height: 350px;
     margin: 0 auto;
-    padding: 10px 0px 10px 0px ;    
+    padding: 10px 0px 10px 0px;
     overflow: hidden;
 }
-.post-slider .post-wrapper .post{
+
+.post-slider .post-wrapper .post {
     background-color: beige;
     display: inline-block;
     height: 330px;
     width: 330px;
     margin: 0 10px;
     border-radius: 5px;
-    box-shadow:1rem 1rem 1rem -0.5rem #0a0a0a33;
+    box-shadow: 1rem 1rem 1rem -0.5rem #0a0a0a33;
 }
-.post-slider .post-wrapper .post .post-info{
+
+.post-slider .post-wrapper .post .post-info {
     height: 130px;
     padding: 5px 10px;
-    
+
 }
-.info-title{
+
+.info-title {
     margin-bottom: 20px;
 }
-.slider-title{
+
+.slider-title {
     text-align: center;
     margin: 30px auto;
 }
-.slider-image{
+
+.slider-image {
     width: 100%;
     height: 200px;
-    
+
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
 }
+
 /*-------------------------------  MAIN CONTENT---------------------------------------*/
-.content{
+.content {
     width: 90%;
     margin: 30px auto;
-    
+
 }
 
-.content .main-content.single{
+.content .main-content.single {
     background: white;
     padding: 20px 50px;
     font-size: 1.1em;
-    border-radius: 5px;    
+    border-radius: 5px;
 }
-.content .main-content.single .post-title{
+
+.content .main-content.single .post-title {
     text-align: center;
     margin-bottom: 40px;
 }
 
-.content .main-content{
+.content .main-content {
     width: 70%;
     float: left;
 }
 
-.main-content .recent-post-title{
+.main-content .recent-post-title {
     margin: 20px;
 }
-.main-content .post{
+
+.main-content .post {
     width: 95%;
     height: 270px;
     margin: 0 auto;
@@ -224,22 +277,25 @@ header .menu-toggle{
     border-radius: 10px;
     background: beige;
     position: relative;
-    box-shadow: 1rem 1rem 1rem -1rem ;
-    
+    box-shadow: 1rem 1rem 1rem -1rem;
+
 }
-.main-content .post .post-img{
+
+.main-content .post .post-img {
     width: 40%;
     height: 100%;
     float: left;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
 }
-.main-content .post .post-preview{
+
+.main-content .post .post-preview {
     width: 60%;
     padding: 10px;
     float: right;
 }
-.main-content .post .read-more{
+
+.main-content .post .read-more {
     position: absolute;
     right: 10px;
     bottom: 10px;
@@ -248,80 +304,128 @@ header .menu-toggle{
 
 /*---------------------------------- SidBar -----------------------------------*/
 
-.content .sidebar{
+.content .sidebar {
     width: 30%;
     float: left;
     height: 1000px;
     margin-bottom: 100px;
-    
+
 }
-.content   .sidebar.single{
+
+.content .sidebar.single {
     padding: 0px 10px;
 }
-.content .sidebar .section{
+
+.content .sidebar .section {
     background: white;
     padding: 20px;
     margin-bottom: 20px;
     border-radius: 5px;
 }
-.content .sidebar .section.popular .post{
+
+.content .sidebar .section.popular .post {
 
     border-top: 1px solid #e0e0e0;
     margin-top: 10px;
     padding-top: 10px;
 }
-.content .sidebar .section.popular .post img{
+
+.content .sidebar .section.popular .post img {
     width: 60px;
     height: 60px;
     margin-right: 10px;
     float: left;
-    
-}
-.content .sidebar .section.popular .post .title{
 
 }
 
-.content .sidebar .section .section-title{
+
+.content .sidebar .section .section-title {
     margin: 10px 0px;
 }
-.content .sidebar .search{
+
+.content .sidebar .search {
     margin-top: 80px;
 }
+
 .content .sidebar .topics ul {
     margin: 0;
     padding: 0;
     list-style: none;
     border-top: 1px solid #444;
 }
-.content .sidebar .topics ul li a{
+
+.content .sidebar .topics ul li a {
     padding: 15px 0px;
     border-bottom: 1px solid #e0e0e0;
     display: block;
     transition: 0.5s;
 }
-.content .sidebar .topics ul li a:hover{
+
+.content .sidebar .topics ul li a:hover {
     padding-left: 10px;
     transition: 0.5s;
 }
 
+/*---------------------------------- autho register -----------------------------------*/
+
+.auth-content {
+    border: 1px solid #ccc;
+    width: 30%;
+    box-shadow: 0 0 1rem 0.1rem #ccc;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 5px;
+    background: white;
+}
+
+.auth-content form div {
+    margin-bottom: 10px;
+
+}
+
+.auth-content form p {
+    text-align: center;
+}
+
+.auth-content form label {
+    margin-bottom: 7px;
+    display: inline-block;
+}
+
+.auth-content form p a {
+    text-decoration: underline;
+    transition: 0.4s;
+}
+
+.auth-content form p a:hover {
+    color: teal;
+    transition: 0.3s;
+}
+
+.auth-content .register-title {
+    text-align: center;
+}
+
 /*---------------------------------- FOOTER -----------------------------------*/
 
-.footer{
+.footer {
     background: #303036;
     color: #d3d3d3;
     height: 400px;
     position: relative;
 }
-.footer .footer-content{
+
+.footer .footer-content {
     height: 350px;
     display: flex;
 }
 
-.footer .footer-content .footer-section{
-    flex:1;
+.footer .footer-content .footer-section {
+    flex: 1;
     padding: 25px;
 }
-.footer .footer-bottom{
+
+.footer .footer-bottom {
     background: #343a40;
     color: #686868;
     height: 50px;
@@ -332,48 +436,55 @@ header .menu-toggle{
     padding-top: 20px;
     width: 100%;
 }
-.footer h1{
+
+.footer h1 {
     color: #fff;
 }
-.footer .footer-content .about .contact  span{
+
+.footer .footer-content .about .contact span {
     display: block;
     margin-bottom: 20px;
     font-size: 1.1em;
 }
-.footer .footer-content .about  .socials a{
+
+.footer .footer-content .about .socials a {
     border: 1px solid grey;
     height: 41px;
     width: 41px;
     padding-bottom: 4px;
     padding-top: 6px;
     margin-right: 5px;
-    text-align:center;
+    text-align: center;
     display: inline-block;
     font-size: 1.3em;
     border-radius: 5px;
     transition: 0.4s;
 }
-.footer .footer-content .about  .socials a:hover{
- background: #d3d3d3;
- color: #303036 ;
- transition: 0.4s;
+
+.footer .footer-content .about .socials a:hover {
+    background: #d3d3d3;
+    color: #303036;
+    transition: 0.4s;
 }
-.footer .footer-content .links ul a{
-     display: block;
-     margin-bottom: 10px;
-     font-size: 1.2em;
-     transition: 1s;
+
+.footer .footer-content .links ul a {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    transition: 1s;
 }
-.footer .footer-content .links h1{
+
+.footer .footer-content .links h1 {
     margin-bottom: 30px;
 }
-.footer .footer-content .links ul a:hover{
+
+.footer .footer-content .links ul a:hover {
     color: white;
     margin-left: 15px;
     transition: 0.5s;
 }
 
-.footer .footer-content .contact-form .contact-input{
+.footer .footer-content .contact-form .contact-input {
     background: #272727;
     color: #bebdbd;
     margin-bottom: 15px;
@@ -382,48 +493,56 @@ header .menu-toggle{
     border: none;
     transition: 0.9s;
 }
-.footer .footer-content .contact-form .contact-input:focus{
+
+.footer .footer-content .contact-form .contact-input:focus {
     background: #1a1a1a;
     transition: 0.9s;
 }
-.footer .footer-content .contact-form .btn-big{
+
+.footer .footer-content .contact-form .btn-big {
     float: right;
     width: 150px;
     line-height: 1.3rem;
     padding: 0.7rem 1.3rem;
- 
- 
+
+
 }
+
 /*---------------------------------- Media queries -----------------------------------*/
 
-@media only screen AND (max-width:650px){
-    header{
+@media only screen AND (max-width:650px) {
+    header {
         position: relative;
     }
-    header ul{
+
+    header ul {
         width: 100%;
         background-color: #5c5c5c;
         max-height: 0px;
         overflow: hidden;
     }
-    header ul li{
-      width: 100%;        
-    }
-    header ul li ul{
-        position: static;
-        width: 100%;  
-       display: block;
-       
-      }
-      header ul li ul li:hover{
-        background-color: lightblue;
-      }
-      header ul li ul li:hover a{
-          margin-left: 35px;
-          background-color: inherit;
-      }
 
-      header .menu-toggle{
+    header ul li {
+        width: 100%;
+    }
+
+    header ul li ul {
+        position: static;
+        width: 100%;
+        display: block;
+
+    }
+
+    header ul li ul li:hover {
+        background-color: lightblue;
+    }
+
+    header ul li ul li:hover a {
+        margin-left: 35px;
+        background-color: inherit;
+    }
+
+    header .menu-toggle {
         display: block;
         right: 0.5em;
         top: 15px;
@@ -431,36 +550,37 @@ header .menu-toggle{
         position: absolute;
     }
 
-    header .menu-toggle:hover{
+    header .menu-toggle:hover {
         cursor: pointer;
     }
 
-    header .logo{
+    header .logo {
         float: left;
         height: inherit;
-        margin-left: 0.5em;   
+        margin-left: 0.5em;
     }
 
-    header .logo-text{
+    header .logo-text {
         font-size: 1.6em;
-        
+
         margin-top: 18px;
     }
 
-    .showing{
+    .showing {
         max-height: 100em;
-        
+
     }
 
     /*----------- slider ---------------*/
-    .post-slider .next{   
+    .post-slider .next {
         position: absolute;
         top: 50%;
         right: 3px;
         font-size: 1em;
         cursor: pointer;
     }
-    .post-slider .prev{   
+
+    .post-slider .prev {
         position: absolute;
         top: 50%;
         left: 3px;
@@ -468,4 +588,3 @@ header .menu-toggle{
         cursor: pointer;
     }
 }
-
