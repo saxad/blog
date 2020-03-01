@@ -307,7 +307,7 @@ header .menu-toggle {
 .content .sidebar {
     width: 30%;
     float: left;
-    height: 1000px;
+     
     margin-bottom: 100px;
 
 }
@@ -509,6 +509,31 @@ header .menu-toggle {
 }
 
 /*---------------------------------- Media queries -----------------------------------*/
+@media only screen AND (max-width:1000px){
+    .content{
+        width: 100%;
+    }
+}
+
+@media only screen AND (max-width:850px) {
+    .content .main-content {
+        width: 100%;
+        float: left;
+        
+    }
+    .content .sidebar {
+        width: 100%;
+        float: left;
+        margin-bottom: 100px;
+        padding: 0 50px;
+
+    }
+    .content .sidebar .search {
+        margin-top: 20px;
+    }
+}
+
+
 
 @media only screen AND (max-width:650px) {
     header {
@@ -571,7 +596,8 @@ header .menu-toggle {
 
     }
 
-    /*----------- slider ---------------*/
+    /*----------- slider (Media queries) ---------------*/
+    
     .post-slider .next {
         position: absolute;
         top: 50%;
