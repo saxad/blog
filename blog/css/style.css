@@ -278,6 +278,7 @@ header .menu-toggle {
     background: beige;
     position: relative;
     box-shadow: 1rem 1rem 1rem -1rem;
+    
 
 }
 
@@ -287,12 +288,14 @@ header .menu-toggle {
     float: left;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
+    
 }
 
 .main-content .post .post-preview {
     width: 60%;
     padding: 10px;
     float: right;
+
 }
 
 .main-content .post .read-more {
@@ -531,29 +534,33 @@ header .menu-toggle {
     .content .sidebar .search {
         margin-top: 20px;
     }
-.footer {
-    height: auto;
-    position: relative;
-}
+    .footer {
+        height: auto;
+        position: relative;
+    }   
 
-.footer .footer-content {
-    height: auto;
-    flex-direction: column;
-}
+    .footer .footer-content {
+        height: auto;
+        flex-direction: column;
+    }
 
-.footer .footer-content .footer-section {
-    flex: 1;
-    padding: 25px;
-    border-bottom: 1px solid #bebdbd;
+    .footer .footer-content .footer-section {
+        flex: 1;
+        padding: 25px;
+        border-bottom: 1px solid #bebdbd;
     
+    }
+    .footer .footer-content .contact-form{
+        padding-bottom: 90px;
+    }
+    .footer .footer-content .contact-form .btn-big{
+        width: 100%;
+    }
 }
-.footer .footer-content .contact-form{
-    padding-bottom: 90px;
-}
-.footer .footer-content .contact-form .btn-big{
-    width: 100%;
-}
-}
+
+
+
+
 
 
 
@@ -634,5 +641,32 @@ header .menu-toggle {
         left: 3px;
         font-size: 1em;
         cursor: pointer;
+    }
+    /*----------- post (Media queries) ---------------*/
+    .main-content .post {
+        width: 88%;
+        height: auto;
+     
+
+    }
+
+    .main-content .post .post-img {
+        width: 100%;
+        height: 100%;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        border-bottom-left-radius: 0px;
+ 
+        
+    }
+
+    .main-content .post .post-preview {
+        width: 100%;
+    }
+    .main-content .post .read-more {
+        position: static;
+        width: 100%;
+        display: block;
+        text-align: center;
     }
 }
