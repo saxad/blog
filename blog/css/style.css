@@ -531,6 +531,28 @@ header .menu-toggle {
     .content .sidebar .search {
         margin-top: 20px;
     }
+.footer {
+    height: auto;
+    position: relative;
+}
+
+.footer .footer-content {
+    height: auto;
+    flex-direction: column;
+}
+
+.footer .footer-content .footer-section {
+    flex: 1;
+    padding: 25px;
+    border-bottom: 1px solid #bebdbd;
+    
+}
+.footer .footer-content .contact-form{
+    padding-bottom: 90px;
+}
+.footer .footer-content .contact-form .btn-big{
+    width: 100%;
+}
 }
 
 
