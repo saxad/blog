@@ -1,2 +1,3 @@
 # blog
-this is my personal blog 
+this is my personal blog
+first commit 
