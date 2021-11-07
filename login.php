@@ -3,6 +3,7 @@
     <?php
 
         session_start();
+        var_dump(session_start());
         var_dump($_POST);
         var_dump($_SESSION);
         if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true){
@@ -140,17 +141,35 @@
 <?php
 
 require_once('./database.php');
+
+$password_err = $username_err = "";
+$login_err = "";
 if ($_SERVER['REQUEST_METHOD'] === 'POST'){
+  if (empty(trim($_POST['username']))){
+    $username_err = 'Please enter a username';
+  }else{
     $username = $_POST['username'];
+  }
+  if (empty(trim($_POST['password']))){
+    $password_err = 'Please enter a Password';
+  }else{
     $password = $_POST['password'];
+  } 
+  if (empty($password_err) && empty($username_err)){
     $query = 'SELECT * FROM admin where name=? and password=?';
     $stmt = $conn->prepare($query);
     $stmt->execute([$username, $password]);
     if ($stmt->rowCount() == 1 ){
         session_start();
+        var_dump(session_start());
         $_SESSION["loggedin"] = true;
         $_SESSION["username"] = $username;  
+        header("location: dashbord.php");
+    }else{
+      $login_err = "Invalid username or password.";
     }
+  }
+
 }
 
 ?>
@@ -162,7 +181,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
       
       <img src="img_avatar2.png" alt="Avatar" class="avatar">
     </div>
-
+    <?php 
+        if(!empty($login_err)){
+            echo '<div class="alert alert-danger">' . $login_err . '</div>';
+        }        
+        ?>
     <div class="container">
       <label for="uname"><b>Username</b></label>
       <input type="text" placeholder="Enter Username" name="username" required>
