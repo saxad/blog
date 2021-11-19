@@ -1,17 +1,18 @@
+<?php
+
+session_start();
+var_dump(session_start());
+var_dump($_POST);
+var_dump($_SESSION);
+if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true){
+
+    header('location: dashbord.php');
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html>
-    <?php
 
-        session_start();
-        var_dump(session_start());
-        var_dump($_POST);
-        var_dump($_SESSION);
-        if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true){
-
-            header('location: dashbord.php');
-            exit;
-        }
-    ?>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
@@ -155,7 +156,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
   }else{
     $password = $_POST['password'];
   } 
-  if (empty($password_err) && empty($username_err)){
+  if (empty($password_err) or empty($username_err)){
     $query = 'SELECT * FROM admin where name=? and password=?';
     $stmt = $conn->prepare($query);
     $stmt->execute([$username, $password]);
@@ -164,7 +165,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
         var_dump(session_start());
         $_SESSION["loggedin"] = true;
         $_SESSION["username"] = $username;  
-        header("location: dashbord.php");
+        header("location: dashbord/dashbord.php");
     }else{
       $login_err = "Invalid username or password.";
     }
