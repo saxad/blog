@@ -21,6 +21,20 @@ if(isset($_POST['id'])){
   }
 
 }
+if(isset($_POST['id']) && $_POST['id'] === ""){
+  
+  try{
+   
+    $query3 = 'INSERT INTO  post (title, category_id, body)  VALUES(?,?,?)';
+    $stmtpost = $conn->prepare($query3);
+    $stmtpost->execute([$_POST['title'], $_POST['category'], $_POST['body']]);
+  
+  }
+  catch(Exception $e){
+    echo $e->getMessage();
+  }
+
+}
 
 if(isset($_GET['id'])){
   
@@ -33,6 +47,16 @@ if(isset($_GET['id'])){
   $stmt = $conn->prepare($query);
   $stmt->execute([$_GET['id']]);
   $row = $stmt->fetch(PDO::FETCH_OBJ);
+
+}
+
+if(isset($_GET)){
+  
+  
+  $category_query = 'SELECT * FROM category';
+  $category_stmt = $conn->prepare($category_query);
+  $category_stmt->execute();
+  $category_rows = $category_stmt->fetchAll(PDO::FETCH_OBJ);
 
 }
 
@@ -81,9 +105,7 @@ if(isset($_GET['id'])){
                         </div>
                       <div class="form-group">
                         <label for="exampleTextarea1" >Textarea</label>
-                        <textarea class="form-control" id="exampleTextarea1" rows="4" name="body">
-                          <?= $row->body;?>
-                        </textarea>
+                        <textarea class="form-control" id="exampleTextarea1" rows="4" name="body"><?= $row->body;?></textarea>
                       </div>
                       <button type="submit" class="btn btn-primary mr-2">Submit</button>
                       <button class="btn btn-light">Cancel</button>
