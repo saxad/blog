@@ -1,23 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+    <?php //include_once('./requete/sql.php'); ?>
     <?php
+        //if(isset($_GET['category_id'])){    
+            
+            //$stmt_category = getCategory($conn, $_GET['category_id']);
+            //$category = $stmt_category->fetch(PDO::FETCH_OBJ);
+            //$stmt_post = getPostsCategory($conn, $_GET['category_id']);
         
-        if(isset($_GET['category_id'])){    
-            
-            include_once('./database.php');
-            $query_category = 'SELECT * from category where id=?';
-            $query_post = 'SELECT * from post where category_id=?';
-            $stmt_category = $conn->prepare($query_category);
-            $stmt_post = $conn->prepare($query_post);
-            $stmt_category->execute([$_GET['category_id']]);
-            $category = $stmt_category->fetch(PDO::FETCH_OBJ);
-            $stmt_post->execute([$_GET['category_id']]);
-            
-            $query_category = 'SELECT * from category';
-            $stmt_categories = $conn->prepare($query_category);
-            $stmt_categories->execute();
-        }
-
+        //}
 
     ?>
 <?php include_once('./partials/head.php'); ?>
@@ -48,7 +39,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="breadcrumbs">
-                        <a href="index.php">Home</a><i class="fa fa-angle-double-right"></i><span><?= $category->name ?></span>
+                        <a href="index.php?action=main">Home</a><i class="fa fa-angle-double-right"></i><span><?= $category->name ?></span>
                     </div> <!-- end of breadcrumbs -->
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
@@ -91,7 +82,7 @@
                                         
                                     </div>
                                     <div class="button-container">
-                                        <a class="btn-solid-reg page-scroll" href="article.php">DETAILS</a>
+                                        <a class="btn-solid-reg page-scroll" href="?action=post&post_id=<?= $post->id ?>">DETAILS</a>
                                     </div> <!-- end of button-container -->
                                 </div>
                                 <!-- end of card -->
@@ -102,15 +93,13 @@
     </div> <!-- end of cards-2 -->
     <!-- end of services -->
     
-
-    
     <!-- Breadcrumbs -->
     <div class="ex-basic-1">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="breadcrumbs">
-                        <a href="index.php">Home</a><i class="fa fa-angle-double-right"></i><span><?= $category->name ?></span>
+                        <a href="index.php?action=main">Home</a><i class="fa fa-angle-double-right"></i><span><?= $category->name ?></span>
                     </div> <!-- end of breadcrumbs -->
                 </div> <!-- end of col -->
             </div> <!-- end of row -->

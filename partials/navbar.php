@@ -4,7 +4,7 @@
         <!-- <a class="navbar-brand logo-text page-scroll" href="index.html">Aria</a> -->
 
         <!-- Image Logo -->
-        <a class="navbar-brand logo-image" href="index.php"><img src="images/shark.svg" alt="alternative"></a>
+        <a class="navbar-brand logo-image" href="index.php?action=main"><img src="images/shark.svg" alt="alternative"></a>
         
         <!-- Mobile Menu Toggle Button -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
@@ -32,8 +32,9 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle page-scroll" href="#services" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">ABOUT</a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <?php while($category_row = $stmt_categories->fetch(PDO::FETCH_OBJ)) {?>
-                        <a class="dropdown-item" href="articles.php?category_id=<?= $category_row->id?>"><span class="item-text"><?= $category_row->name;?></span></a>
+                        
+                        <?php  while($category_row = $stmt_categories->fetch(PDO::FETCH_OBJ)) {?>
+                        <a class="dropdown-item" href="?action=posts&category_id=<?= $category_row->id?>"><span class="item-text"><?= $category_row->name;?></span></a>
                         <div class="dropdown-items-divide-hr"></div>
                         <?php }?>
                     </div>
