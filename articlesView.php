@@ -1,25 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-    <?php //include_once('./requete/sql.php'); ?>
-    <?php
-        //if(isset($_GET['category_id'])){    
-            
-            //$stmt_category = getCategory($conn, $_GET['category_id']);
-            //$category = $stmt_category->fetch(PDO::FETCH_OBJ);
-            //$stmt_post = getPostsCategory($conn, $_GET['category_id']);
-        
-        //}
-
-    ?>
-<?php include_once('./partials/head.php'); ?>
-<body data-spy="scroll" data-target=".fixed-top">
-    
-    
-    <?php include_once('./partials/preloader.php'); ?>
-
-    <?php include_once('./partials/navbar.php'); ?>
-
-
+<?php ob_start(); ?>
     <!-- Header -->
     <header id="header" class="ex-header">
         <div class="container">
@@ -31,6 +10,9 @@
         </div> <!-- end of container -->
     </header> <!-- end of ex-header -->
     <!-- end of header -->
+
+<?php $header = ob_get_clean(); ?>
+<?php ob_start(); ?>
 
 
     <!-- Breadcrumbs -->
@@ -46,8 +28,6 @@
         </div> <!-- end of container -->
     </div> <!-- end of ex-basic-1 -->
     <!-- end of breadcrumbs -->
-
-
 
     <!-- Services -->
     <div id="services" class="cards-2">
@@ -107,19 +87,5 @@
     </div> <!-- end of ex-basic-1 -->
     <!-- end of breadcrumbs -->
 
-
-    <?php include_once('./partials/footer.php'); ?>
-	
-    <!-- Scripts -->
-    <script src="js/jquery.min.js"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
-    <script src="js/popper.min.js"></script> <!-- Popper tooltip library for Bootstrap -->
-    <script src="js/bootstrap.min.js"></script> <!-- Bootstrap framework -->
-    <script src="js/jquery.easing.min.js"></script> <!-- jQuery Easing for smooth scrolling between anchors -->
-    <script src="js/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
-    <script src="js/jquery.magnific-popup.js"></script> <!-- Magnific Popup for lightboxes -->
-    <script src="js/morphext.min.js"></script> <!-- Morphtext rotating text in the header -->
-    <script src="js/isotope.pkgd.min.js"></script> <!-- Isotope for filter -->
-    <script src="js/validator.min.js"></script> <!-- Validator.js - Bootstrap plugin that validates forms -->
-    <script src="js/scripts.js"></script> <!-- Custom scripts -->
-</body>
-</html>
+    <?php $body = ob_get_clean(); ?>
+    <?php require('./template.php'); ?>

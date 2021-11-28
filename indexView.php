@@ -1,17 +1,4 @@
-<!DOCTYPE html>
-
- <?php //include_once('./requete/sql.php'); ?> 
-
-<html lang="en">
-<?php include_once('./partials/head.php'); ?>
-<body data-spy="scroll" data-target=".fixed-top">
-    
-    <?php include_once('./partials/preloader.php'); ?>
-    
-    <?php include_once('./partials/navbar.php'); ?>
-
-
-
+<?php ob_start(); ?>
     <!-- Header -->
     <header id="header" class="header">
         <div class="header-content">
@@ -31,6 +18,10 @@
     </header> <!-- end of header -->
     <!-- end of header -->
 
+<?php  $header = ob_get_clean(); ?>
+
+
+<?php ob_start(); ?>
 
     <!-- Intro -->
     <div id="intro" class="basic-1">
@@ -54,10 +45,6 @@
         </div> <!-- end of container -->
     </div> <!-- end of basic-1 -->
     <!-- end of intro -->
-
-
-
-
     <!-- Services -->
     <div id="services" class="cards-2">
         <div class="container">
@@ -111,115 +98,9 @@
     </div> <!-- end of cards-2 -->
     <!-- end of services -->
     
-
-
-
-
-
     <!-- Testimonials -->
-    <div class="slider">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h2>Random tweet here</h2>
-                    <p class="p-heading">Our clients are our partners and we can not imagine a better future for our company without helping them reach their objectives</p>
-                </div> <!-- end of col -->
-            </div> <!-- end of row -->
-            <div class="row">
-                <div class="col-lg-12">
-
-                    <!-- Card Slider -->
-                    <div class="slider-container">
-                        <div class="swiper-container card-slider">
-                            <div class="swiper-wrapper">
-                                
-                                <!-- Slide -->
-                                <div class="swiper-slide">
-                                    <div class="card">
-                                        <img class="card-image" src="images/testimonial-1.jpg" alt="alternative">
-                                        <div class="card-body">
-                                            <div class="testimonial-text">The guys from Aria helped with getting my business off the ground and turning into a profitable company.</div>
-                                            <div class="testimonial-author">Jude Thorn - Founder</div>
-                                        </div>
-                                    </div>
-                                </div> <!-- end of swiper-slide -->
-                                <!-- end of slide -->
-        
-                                <!-- Slide -->
-                                <div class="swiper-slide">
-                                    <div class="card">
-                                        <img class="card-image" src="images/testimonial-2.jpg" alt="alternative">
-                                        <div class="card-body">
-                                            <div class="testimonial-text">I purchased the Growth Accelerator service pack a few years ago and I renewed the contract each year. </div>
-                                            <div class="testimonial-author">Marsha Singer - Marketer</div>
-                                        </div>
-                                    </div>        
-                                </div> <!-- end of swiper-slide -->
-                                <!-- end of slide -->
-        
-                                <!-- Slide -->
-                                <div class="swiper-slide">
-                                    <div class="card">
-                                        <img class="card-image" src="images/testimonial-3.jpg" alt="alternative">
-                                        <div class="card-body">
-                                            <div class="testimonial-text">Aria's CEO personally attends client meetings and gives his feedback on business growth strategies.</div>
-                                            <div class="testimonial-author">Roy Smith - Developer</div>
-                                        </div>
-                                    </div>        
-                                </div> <!-- end of swiper-slide -->
-                                <!-- end of slide -->
-        
-                                <!-- Slide -->
-                                <div class="swiper-slide">
-                                    <div class="card">
-                                        <img class="card-image" src="images/testimonial-4.jpg" alt="alternative">
-                                        <div class="card-body">
-                                            <div class="testimonial-text">At the beginning I thought the prices are a little high for what they offer but they over deliver each and every time.</div>
-                                            <div class="testimonial-author">Ronald Spice - Owner</div>
-                                        </div>
-                                    </div>
-                                </div> <!-- end of swiper-slide -->
-                                <!-- end of slide -->
-        
-                                <!-- Slide -->
-                                <div class="swiper-slide">
-                                    <div class="card">
-                                        <img class="card-image" src="images/testimonial-5.jpg" alt="alternative">
-                                        <div class="card-body">
-                                            <div class="testimonial-text">I recommend Aria to every business owner or growth leader that wants to take his company to the next level.</div>
-                                            <div class="testimonial-author">Lindsay Rune - Manager</div>
-                                        </div>
-                                    </div>        
-                                </div> <!-- end of swiper-slide -->
-                                <!-- end of slide -->
-        
-                                <!-- Slide -->
-                                <div class="swiper-slide">
-                                    <div class="card">
-                                        <img class="card-image" src="images/testimonial-6.jpg" alt="alternative">
-                                        <div class="card-body">
-                                            <div class="testimonial-text">My goals for using Aria's services seemed high when I first set them but they've met them with no problems.</div>
-                                            <div class="testimonial-author">Ann Black - Consultant</div>
-                                        </div>
-                                    </div>        
-                                </div> <!-- end of swiper-slide -->
-                                <!-- end of slide -->
-                            
-                            </div> <!-- end of swiper-wrapper -->
-        
-                            <!-- Add Arrows -->
-                            <div class="swiper-button-next"></div>
-                            <div class="swiper-button-prev"></div>
-                            <!-- end of add arrows -->
-        
-                        </div> <!-- end of swiper-container -->
-                    </div> <!-- end of sliedr-container -->
-                    <!-- end of card slider -->
-
-                </div> <!-- end of col -->
-            </div> <!-- end of row -->
-        </div> <!-- end of container -->
-    </div> <!-- end of slider -->
+     <!-- time slider here for last news -->
+    <!-- end of slider -->
     <!-- end of testimonials -->
 
     <!-- Projects -->
@@ -462,56 +343,10 @@
     <!-- end of lightbox -->
     <!-- end of project lightboxes -->
 
-    <!-- Contact -->
-    <div id="contact" class="form-2">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="text-container">
-                        <div class="section-title">CONTACT</div>
-                        <h2>Get In Touch Using The Form</h2>
-                        <p>Or send me a message on </p>
-                     
-                        <h3>Follow Aria On Social Media</h3>
 
-                        <span class="fa-stack">
-                            <a href="https://twitter.com/saad__zizi">
-                                <span class="hexagon"></span>
-                                <i class="fab fa-twitter fa-stack-1x"></i>
-                            </a>
-                        </span>
-                        <span class="fa-stack">
-                            <a href="https://github.com/saxad">
-                                <span class="hexagon"></span>
-                                <i class="fab fa-github fa-stack-1x"></i>
-                            </a>
-                        </span>
-     
-                        <span class="fa-stack">
-                            <a href="https://www.linkedin.com/in/saad-zizi-5a0aa1121/">
-                                <span class="hexagon"></span>
-                                <i class="fab fa-linkedin-in fa-stack-1x"></i>
-                            </a>
-                        </span>
-     
-                    </div> <!-- end of text-container -->
-                </div> <!-- end of col -->
-                <div class="col-lg-6">
-                    
 
     <?php include_once('./partials/contact.php'); ?>
-    <?php include_once('./partials/footer.php'); ?>
-    	
-    <!-- Scripts -->
-    <script src="js/jquery.min.js"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
-    <script src="js/popper.min.js"></script> <!-- Popper tooltip library for Bootstrap -->
-    <script src="js/bootstrap.min.js"></script> <!-- Bootstrap framework -->
-    <script src="js/jquery.easing.min.js"></script> <!-- jQuery Easing for smooth scrolling between anchors -->
-    <script src="js/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
-    <script src="js/jquery.magnific-popup.js"></script> <!-- Magnific Popup for lightboxes -->
-    <script src="js/morphext.min.js"></script> <!-- Morphtext rotating text in the header -->
-    <script src="js/isotope.pkgd.min.js"></script> <!-- Isotope for filter -->
-    <script src="js/validator.min.js"></script> <!-- Validator.js - Bootstrap plugin that validates forms -->
-    <script src="js/scripts.js"></script> <!-- Custom scripts -->
-</body>
-</html>
+
+    <?php  $body = ob_get_clean(); ?>
+
+    <?php require('./template.php'); ?>

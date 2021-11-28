@@ -1,4 +1,39 @@
-                    <!-- Contact Form -->
+<div id="contact" class="form-2">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="text-container">
+                        <div class="section-title">CONTACT</div>
+                        <h2>Get In Touch Using The Form</h2>
+                        <p>Or send me a message on </p>
+                     
+                        <h3>Follow Aria On Social Media</h3>
+
+                        <span class="fa-stack">
+                            <a href="https://twitter.com/saad__zizi">
+                                <span class="hexagon"></span>
+                                <i class="fab fa-twitter fa-stack-1x"></i>
+                            </a>
+                        </span>
+                        <span class="fa-stack">
+                            <a href="https://github.com/saxad">
+                                <span class="hexagon"></span>
+                                <i class="fab fa-github fa-stack-1x"></i>
+                            </a>
+                        </span>
+     
+                        <span class="fa-stack">
+                            <a href="https://www.linkedin.com/in/saad-zizi-5a0aa1121/">
+                                <span class="hexagon"></span>
+                                <i class="fab fa-linkedin-in fa-stack-1x"></i>
+                            </a>
+                        </span>
+     
+                    </div> <!-- end of text-container -->
+                </div> <!-- end of col -->
+                <div class="col-lg-6">
+                    
+             <!-- Contact Form -->
                     <form id="contactForm" data-toggle="validator" data-focus="false">
                         <div class="form-group">
                             <input type="text" class="form-control-input" id="cname" required>
