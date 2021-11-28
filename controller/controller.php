@@ -1,10 +1,10 @@
 <?php
     // ca c'est le require du model
-    require('./requete/sql.php');
+    require('./model/model.php');
     function main(){
         $stmt_categories = getCategories();
         $stmt = getPosts();
-        require('indexView.php');
+        require('./view/indexView.php');
     }
 
     function posts($category_id){        
@@ -12,12 +12,12 @@
         $stmt_category = getCategory($category_id);
         $category = $stmt_category->fetch(PDO::FETCH_OBJ);
         $stmt_categories = getCategories();
-        require('articlesView.php');
+        require('./view/articlesView.php');
         //return $stmt_post;
     }
     
     function post($post_id){
         $post = getPost($post_id);
         $stmt_categories = getCategories();
-        require('articleView.php');
+        require('./view/articleView.php');
     }
