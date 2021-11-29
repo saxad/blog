@@ -347,6 +347,6 @@
 
     <?php include_once('./partials/contact.php'); ?>
 
-    <?php  $body = ob_get_clean(); ?>
+<?php  $body = ob_get_clean(); ?>
 
-    <?php require('./view/template.php'); ?>
+<?php require('./view/template.php'); ?>
