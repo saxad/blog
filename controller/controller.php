@@ -1,8 +1,10 @@
 <?php
-    // ca c'est le require du model
-    //require('./model/model.php');
+
     require('./model/Category.php');
     require('./model/Post.php');
+    use \Zio\Blog\Model\Post;
+    use \Zio\Blog\Model\Category;
+
     function main(){
         $cat = new Category();
         $post = new Post();

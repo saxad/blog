@@ -1,5 +1,7 @@
 <?php
 
+namespace Zio\Blog\Model;
+
 class Post{
     
     public function getPostsCategory($category_id){
@@ -26,7 +28,7 @@ class Post{
         $query = 'SELECT * from post where id=?';
         $stmt = $conn->prepare($query);
         $stmt->execute([$post_id]);
-        $post = $stmt->fetch(PDO::FETCH_OBJ);
+        $post = $stmt->fetch(\PDO::FETCH_OBJ);
         return $post;
     }
 
@@ -37,8 +39,8 @@ class Post{
         $password = 'root';
         $db = 'blog';
         try {
-            $conn = new PDO("mysql:host=$host;dbname=$db",$user,$password);
-            $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $conn = new \PDO("mysql:host=$host;dbname=$db",$user,$password);
+            $conn->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
             
         } catch (\Throwable $th) {
             
