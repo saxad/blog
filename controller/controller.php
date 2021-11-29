@@ -1,7 +1,7 @@
 <?php
+    require('./Autoloader.php');
+    Autoloader::register();
 
-    require('./model/Category.php');
-    require('./model/Post.php');
     use \Zio\Blog\Model\Post;
     use \Zio\Blog\Model\Category;
 
