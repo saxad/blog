@@ -5,7 +5,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <h1><?= $post->title;?></h1>
+                    <h1><?= $post[0]->title;?></h1>
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
         </div> <!-- end of container -->
@@ -37,8 +37,8 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="text-container">
-                        <h3><?= $post->title;?></h3>
-                        <p><?= $post->body;?></p>
+                        <h3><?= $post[0]->title;?></h3>
+                        <p><?= $post[0]->body;?></p>
                     </div> <!-- end of text-container-->
                     <a class="btn-outline-reg back" href="index.php?action=main">BACK</a>
                 </div> <!-- end of col-->

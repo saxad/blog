@@ -1,6 +1,10 @@
 <?php
     require_once('./controller/controller.php');
 try {
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    error_reporting(E_ALL);
+    
     if(isset($_GET['action'])){
         //die($_GET['action']);
         if($_GET['action'] == 'main'){

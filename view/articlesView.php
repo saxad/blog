@@ -40,15 +40,15 @@
             </div> <!-- end of row -->
             <div class="row">
                 <div class="col-lg-12">
-                    <?php while( $post = $stmt_post->fetch(PDO::FETCH_OBJ)){ ?>
+                    <?php for ($i=0 ; $i < count($category_posts) ; $i++ ) {  ?>
                                    <!-- Card -->
                                    <div class="card">
                                     <div class="card-image">
                                         <img class="img-fluid" src="images/services-1.jpg" alt="alternative">
                                     </div>
                                     <div class="card-body">
-                                        <h3 class="card-title"><?= $post->title ?></h3>
-                                        <p><?= $post->body ?></p>
+                                        <h3 class="card-title"><?= $category_posts[$i]->title ?></h3>
+                                        <p><?= $category_posts[$i]->body ?></p>
                                         <ul class="list-unstyled li-space-lg">
                                             <li class="media">
                                                 <i class="fas fa-square"></i>
@@ -56,13 +56,13 @@
                                             </li>
                                             <li class="media">
                                                 <i class="fas fa-square"></i>
-                                                <div class="media-body"><?= $post->created_at ?></div>
+                                                <div class="media-body"><?= $category_posts[$i]->created_at ?></div>
                                             </li>
                                         </ul>
                                         
                                     </div>
                                     <div class="button-container">
-                                        <a class="btn-solid-reg page-scroll" href="?action=post&post_id=<?= $post->id ?>">DETAILS</a>
+                                        <a class="btn-solid-reg page-scroll" href="?action=post&post_id=<?= $category_posts[$i]->id ?>">DETAILS</a>
                                     </div> <!-- end of button-container -->
                                 </div>
                                 <!-- end of card -->

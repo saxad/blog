@@ -62,15 +62,16 @@
 
                     <!-- Card -->
                     <?php
-                     while($row = $stmt->fetch(PDO::FETCH_OBJ)){
+                     //while($posts[$i] = $stmt->fetch(PDO::FETCH_OBJ)){
+                        for ($i=0; $i < count($posts) ; $i++) { 
                      ?>
                     <div class="card">
                         <div class="card-image">
                             <img class="img-fluid" src="public/images/services-3.jpg" alt="alternative">
                         </div>
                         <div class="card-body">
-                            <h3 class="card-title"><?= $row->title?></h3>
-                            <p><?php echo mb_strimwidth($row->body, 0, 100, "...");?></p>
+                            <h3 class="card-title"><?= $posts[$i]->title?></h3>
+                            <p><?php echo mb_strimwidth($posts[$i]->body, 0, 100, "...");?></p>
                             <ul class="list-unstyled li-space-lg">
                                 <li class="media">
                                     <i class="fas fa-square"></i>
@@ -78,13 +79,13 @@
                                 </li>
                                 <li class="media">
                                     <i class="fas fa-square"></i>
-                                    <div class="media-body"><?=$row->created_at?></div>
+                                    <div class="media-body"><?=$posts[$i]->created_at?></div>
                                 </li>
                             </ul>
                             
                         </div>
                         <div class="button-container">
-                            <a class="btn-solid-reg page-scroll" href="?action=post&post_id=<?= $row->id ?>">DETAILS</a>
+                            <a class="btn-solid-reg page-scroll" href="?action=post&post_id=<?= $posts[$i]->id ?>">DETAILS</a>
                         </div> <!-- end of button-container -->
                     </div>
                     <?php

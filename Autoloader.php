@@ -11,11 +11,10 @@ class Autoloader{
 
 
     static function autoload($class_name){
-        
-        $parts = explode('\\', $class_name);
-        //var_dump('./model/'.end($parts).'.php');
-        //die();
-        require('./model/'.end($parts).'.php');
+        $path = str_replace('\\','/',$class_name);
+        $path = str_replace('Zio','',$path);
+        $path[1] = strtolower($path[1]);
+        require('.'. $path . '.php');
     }
 
 

@@ -1,52 +1,34 @@
 <?php
 
-namespace Zio\Blog\Model;
+namespace Zio\Model;
+use Zio\App\Database;
 
 class Post{
+
+    private $db;
     
-    public function getPostsCategory($category_id){
-        $conn = $this->dbConnection();
-        $query_post = 'SELECT * from post where category_id=?';
-        $stmt_post = $conn->prepare($query_post);
-        $stmt_post->execute([$category_id]);
-        return $stmt_post;
-        
+    public function __construct(Database $db)
+    {
+        $this->db = $db;
+    }
+    
+    public function getPostsCategory($category_id){        
+        $query = 'SELECT * from post where category_id=?';
+        $category_posts = $this->db->prepare($query, [$category_id]);
+        return $category_posts;        
     }
 
     public function getPosts(){
-        $conn = $this->dbConnection();
         $query = 'SELECT * from post';
-        $stmt = $conn->prepare($query);
-        $stmt->execute();
-        return $stmt;
-    
+        $posts = $this->db->query($query);
+        return $posts;
     }
 
     public function getPost($post_id)
     {
-        $conn = $this->dbConnection();
         $query = 'SELECT * from post where id=?';
-        $stmt = $conn->prepare($query);
-        $stmt->execute([$post_id]);
-        $post = $stmt->fetch(\PDO::FETCH_OBJ);
+        $post = $this->db->prepare($query, [$post_id]);
         return $post;
     }
 
-    private function dbConnection()
-    {
-        $host = '127.0.0.1';
-        $user = 'phpmyadmin';
-        $password = 'root';
-        $db = 'blog';
-        try {
-            $conn = new \PDO("mysql:host=$host;dbname=$db",$user,$password);
-            $conn->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
-            
-        } catch (\Throwable $th) {
-            
-            echo $th->getMessage();
-            
-        }
-        return $conn;
-    }
 }

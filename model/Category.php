@@ -1,6 +1,6 @@
 <?php
 
-namespace Zio\Blog\Model;
+namespace Zio\Model;
 
 class Category{
 
