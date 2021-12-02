@@ -9,10 +9,11 @@
     
     function main(){
         $db = new Database('127.0.0.1', 'phpmyadmin', 'root', 'blog');
-        $cat = new Category();
+        $category = new Category($db);
         $post = new Post($db);
+
         $posts = $post->getPosts();
-        $stmt_categories = $cat->getCategories();
+        $categories = $category->getCategories();
         require('./view/indexView.php');
     }
 
@@ -20,23 +21,17 @@
         $db = new Database('127.0.0.1', 'phpmyadmin', 'root', 'blog');
         $post = new Post($db);
         $category_posts = $post->getPostsCategory($category_id);
-        
-        $cat = new Category();
-        //$post = new Post();
-
-        
-        $stmt_category = $cat->getCategory($category_id);
-        $category = $stmt_category->fetch(PDO::FETCH_OBJ);
-        $stmt_categories = $cat->getCategories();
-
+        $category = new Category($db);
+        $categories = $category->getCategories();
+        $category = $category->getCategory($category_id);
         require('./view/articlesView.php');
     }
     
     function post($post_id){
         $db = new Database('127.0.0.1', 'phpmyadmin', 'root', 'blog');
         $post = new Post($db);
-        $cat = new Category();
+        $category = new Category($db);
         $post = $post->getPost($post_id);
-        $stmt_categories = $cat->getCategories();
+        $categories = $category->getCategories();
         require('./view/articleView.php');
     }

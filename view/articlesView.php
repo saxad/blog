@@ -4,7 +4,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1><?= $category->name ?></h1>
+                    <h1><?= $category[0]->name ?></h1>
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
         </div> <!-- end of container -->
@@ -21,7 +21,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="breadcrumbs">
-                        <a href="index.php?action=main">Home</a><i class="fa fa-angle-double-right"></i><span><?= $category->name ?></span>
+                        <a href="index.php?action=main">Home</a><i class="fa fa-angle-double-right"></i><span><?= $category[0]->name ?></span>
                     </div> <!-- end of breadcrumbs -->
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
@@ -44,7 +44,7 @@
                                    <!-- Card -->
                                    <div class="card">
                                     <div class="card-image">
-                                        <img class="img-fluid" src="images/services-1.jpg" alt="alternative">
+                                        <img class="img-fluid" src="public/images/services-1.jpg" alt="alternative">
                                     </div>
                                     <div class="card-body">
                                         <h3 class="card-title"><?= $category_posts[$i]->title ?></h3>
@@ -79,7 +79,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="breadcrumbs">
-                        <a href="index.php?action=main">Home</a><i class="fa fa-angle-double-right"></i><span><?= $category->name ?></span>
+                        <a href="index.php?action=main">Home</a><i class="fa fa-angle-double-right"></i><span><?= $category[0]->name ?></span>
                     </div> <!-- end of breadcrumbs -->
                 </div> <!-- end of col -->
             </div> <!-- end of row -->

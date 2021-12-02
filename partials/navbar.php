@@ -32,9 +32,8 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle page-scroll" href="#services" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">ABOUT</a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        
-                        <?php  while($category_row = $stmt_categories->fetch(PDO::FETCH_OBJ)) {?>
-                        <a class="dropdown-item" href="?action=posts&category_id=<?= $category_row->id?>"><span class="item-text"><?= $category_row->name;?></span></a>
+                        <?php for ($i=0; $i < count($categories); $i++) {?>
+                        <a class="dropdown-item" href="?action=posts&category_id=<?= $categories[$i]->id?>"><span class="item-text"><?= $categories[$i]->name;?></span></a>
                         <div class="dropdown-items-divide-hr"></div>
                         <?php }?>
                     </div>
