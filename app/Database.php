@@ -6,10 +6,10 @@ use \Exception;
 
 class Database{
 
-    private $host = '127.0.0.1';
-    private $user = 'phpmyadmin';
-    private $password = 'root';
-    private $db = 'blog';
+    private $host;
+    private $user;
+    private $password;
+    private $db;
     private $pdo;
 
 
@@ -50,21 +50,4 @@ class Database{
         return $result;
     }
 
-    private function dbConnection()
-    {
-        $host = '127.0.0.1';
-        $user = 'phpmyadmin';
-        $password = 'root';
-        $db = 'blog';
-        try {
-            $conn = new PDO("mysql:host=$host;dbname=$db",$user,$password);
-            $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            
-        } catch (Exception $e) {
-            
-            echo $e->getMessage();
-            
-        }
-        return $conn;
-    }
 }
