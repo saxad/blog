@@ -9,7 +9,7 @@ try {
     if(isset($_GET['action'])){
         //die($_GET['action']);
         if($_GET['action'] == 'main'){
-            main();
+            include_once('./view/admin/dash.php');
         }
         elseif($_GET['action'] == 'posts'){
             // category id
@@ -34,10 +34,6 @@ try {
         elseif($_GET['action'] == 'login'){
                 login();
         }
-        elseif($_GET['action'] == 'athentification'){
-            authentification_controller($_POST['username'],$_POST['password']);
-        }
-        
         
         else{
             echo "action not handled";

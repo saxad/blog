@@ -12,9 +12,13 @@ class Autoloader{
 
     static function autoload($class_name){
         $path = str_replace('\\','/',$class_name);
-        $path = str_replace('Zio','',$path);
-        $path[1] = strtolower($path[1]);
-        require('.'. $path . '.php');
+        $path_elements = explode('/',$path);
+        for($i=0; $i < count($path_elements)-1; $i++){
+            $path_elements[$i][0] = strtolower($path_elements[$i][0]);
+        }
+        $new_path = implode('/',$path_elements);
+        $new_path = str_replace('zio','',$new_path);
+        require('.'. $new_path . '.php');
     }
 
 
