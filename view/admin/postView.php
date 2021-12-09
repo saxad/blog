@@ -1,71 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
   <?php
-  session_start();
-if (!(isset($_SESSION['loggedin'])) or $_SESSION['loggedin'] == null) {
-    header('Location: login.php');
-    exit;
-}
-require_once('./../database.php');
-if(isset($_POST['id'])){
+//   session_start();
+// if (!(isset($_SESSION['loggedin'])) or $_SESSION['loggedin'] == null) {
+//     header('Location: login.php');
+//     exit;
+// }
+// require_once('./../database.php');
+// if(isset($_POST['id'])){
   
-  try{
+//   try{
    
-    $query3 = 'UPDATE  post SET title=? , category_id=? , body=?  WHERE id=?';
-    $stmtpost = $conn->prepare($query3);
-    $stmtpost->execute([$_POST['title'], $_POST['category'], $_POST['body'], $_POST['id']]);
+//     $query3 = 'UPDATE  post SET title=? , category_id=? , body=?  WHERE id=?';
+//     $stmtpost = $conn->prepare($query3);
+//     $stmtpost->execute([$_POST['title'], $_POST['category'], $_POST['body'], $_POST['id']]);
   
-  }
-  catch(Exception $e){
-    echo $e->getMessage();
-  }
+//   }
+//   catch(Exception $e){
+//     echo $e->getMessage();
+//   }
 
-}
-if(isset($_POST['id']) && $_POST['id'] === ""){
+// }
+// if(isset($_POST['id']) && $_POST['id'] === ""){
   
-  try{
+//   try{
    
-    $query3 = 'INSERT INTO  post (title, category_id, body)  VALUES(?,?,?)';
-    $stmtpost = $conn->prepare($query3);
-    $stmtpost->execute([$_POST['title'], $_POST['category'], $_POST['body']]);
+//     $query3 = 'INSERT INTO  post (title, category_id, body)  VALUES(?,?,?)';
+//     $stmtpost = $conn->prepare($query3);
+//     $stmtpost->execute([$_POST['title'], $_POST['category'], $_POST['body']]);
   
-  }
-  catch(Exception $e){
-    echo $e->getMessage();
-  }
+//   }
+//   catch(Exception $e){
+//     echo $e->getMessage();
+//   }
 
-}
+// }
 
-if(isset($_GET['id'])){
+// if(isset($_GET['id'])){
   
-  $query = 'SELECT * FROM post WHERE id=?';
-  $category_query = 'SELECT * FROM category';
-  $category_stmt = $conn->prepare($category_query);
-  $category_stmt->execute();
-  $category_rows = $category_stmt->fetchAll(PDO::FETCH_OBJ);
+//   $query = 'SELECT * FROM post WHERE id=?';
+//   $category_query = 'SELECT * FROM category';
+//   $category_stmt = $conn->prepare($category_query);
+//   $category_stmt->execute();
+//   $category_rows = $category_stmt->fetchAll(PDO::FETCH_OBJ);
   
-  $stmt = $conn->prepare($query);
-  $stmt->execute([$_GET['id']]);
-  $row = $stmt->fetch(PDO::FETCH_OBJ);
+//   $stmt = $conn->prepare($query);
+//   $stmt->execute([$_GET['id']]);
+//   $row = $stmt->fetch(PDO::FETCH_OBJ);
 
-}
+// }
 
-if(isset($_GET)){
+// if(isset($_GET)){
   
   
-  $category_query = 'SELECT * FROM category';
-  $category_stmt = $conn->prepare($category_query);
-  $category_stmt->execute();
-  $category_rows = $category_stmt->fetchAll(PDO::FETCH_OBJ);
+//   $category_query = 'SELECT * FROM category';
+//   $category_stmt = $conn->prepare($category_query);
+//   $category_stmt->execute();
+//   $category_rows = $category_stmt->fetchAll(PDO::FETCH_OBJ);
 
-}
+// }
 
 ?>
-<?php include_once('./partials/head.php');?>
+<?php include_once('./partials/dashboard/head.php');?>
 <body>
   <div class="container-scroller">
     <!-- partial:partials/_navbar.html -->
-    <?php include_once('./partials/header.php'); ?>
+    <?php include_once('./partials/dashboard/header.php'); ?>
     <!-- partial -->
     <div class="container-fluid page-body-wrapper">
       <!-- partial:partials/_settings-panel.html -->
@@ -73,7 +73,7 @@ if(isset($_GET)){
 
       <!-- partial -->
       <!-- partial:partials/_sidebar.html -->
-    <?php include_once('./partials/side_bar.php'); ?>
+    <?php include_once('./partials/dashboard/side_bar.php'); ?>
       <!-- partial -->
       <div class="main-panel">
         <div class="content-wrapper">
@@ -117,7 +117,7 @@ if(isset($_GET)){
         </div>
         <!-- content-wrapper ends -->
         <!-- partial:partials/_footer.html -->
-        <?php include_once('./partials/footer.php') ?>
+        <?php include_once('./partials/dashboard/footer.php') ?>
         <!-- partial -->
       </div>
       <!-- main-panel ends -->

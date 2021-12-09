@@ -1,48 +1,48 @@
 <?php
-session_start();
-if (!(isset($_SESSION['loggedin'])) or $_SESSION['loggedin'] == null) {
-  header('Location: login.php');
-  exit;
-}
-require_once('./../database.php');
-if (isset($_GET['id'])){
-  var_dump('pp get');
-  $query = 'SELECT * from category where id=?';
+//session_start();
+//if (!(isset($_SESSION['loggedin'])) or $_SESSION['loggedin'] == null) {
+//  header('Location: login.php');
+//  exit;
+//}
+//require_once('./../database.php');
+//if (isset($_GET['id'])){
+  //var_dump('pp get');
+ // $query = 'SELECT * from category where id=?';
   
-  $stmt = $conn->prepare($query);
-  $stmt->execute([$_GET['id']]);
-  $category_name = $stmt->fetch(PDO::FETCH_OBJ);
+  //$stmt = $conn->prepare($query);
+  //$stmt->execute([$_GET['id']]);
+  //$category_name = $stmt->fetch(PDO::FETCH_OBJ);
   
-}
+//}
 // $post_id[id] exist ==> update
-if(isset($_POST['id'])){
-  var_dump('pp post1');
-  var_dump($_POST);
-  $query = 'UPDATE category SET name=? WHERE id=?';
-  $stmt = $conn->prepare($query);
-  $stmt->execute([$_POST['name'], $_POST['id']]);
-  unset($_POST);
-  header('Location: '.$_SERVER['REQUEST_URI']);
-}
-if(!isset($_POST['id']) && isset($_POST['name'])){
-  var_dump($_POST);
-  $query = 'INSERT INTO category (name) VALUES(?) ';
-  $stmt = $conn->prepare($query);
-  $stmt->execute([$_POST['name']]);
-  unset($_POST);
-  header('Location: '.$_SERVER['REQUEST_URI']);
-}
+// if(isset($_POST['id'])){
+//   var_dump('pp post1');
+//   var_dump($_POST);
+//   $query = 'UPDATE category SET name=? WHERE id=?';
+//   $stmt = $conn->prepare($query);
+//   $stmt->execute([$_POST['name'], $_POST['id']]);
+//   unset($_POST);
+//   header('Location: '.$_SERVER['REQUEST_URI']);
+// }
+// if(!isset($_POST['id']) && isset($_POST['name'])){
+//   var_dump($_POST);
+//   $query = 'INSERT INTO category (name) VALUES(?) ';
+//   $stmt = $conn->prepare($query);
+//   $stmt->execute([$_POST['name']]);
+//   unset($_POST);
+//   header('Location: '.$_SERVER['REQUEST_URI']);
+// }
 
 ?>
 <!DOCTYPE html>
 <html lang="en">
 
-<?php include_once('./partials/head.php'); ?>
+<?php include_once('./partials/dashboard/head.php'); ?>
 
 <body>
   <div class="container-scroller">
     <!-- partial:partials/_navbar.html -->
-    <?php include_once('./partials/header.php'); ?>
+    <?php include_once('./partials/dashboard/header.php'); ?>
     <!-- partial -->
     <div class="container-fluid page-body-wrapper">
       <!-- partial:partials/_settings-panel.html -->
@@ -53,7 +53,7 @@ if(!isset($_POST['id']) && isset($_POST['name'])){
     
       <!-- partial -->
       <!-- partial:partials/_sidebar.html -->
-      <?php include_once('./partials/side_bar.php');?>
+      <?php include_once('./partials/dashboard/side_bar.php');?>
       <!-- partial -->
       <div class="main-panel">        
         <div class="content-wrapper">
@@ -86,7 +86,7 @@ if(!isset($_POST['id']) && isset($_POST['name'])){
         </div>
         <!-- content-wrapper ends -->
         <!-- partial:partials/_footer.html -->
-      <?php include_once('./partials/footer.php'); ?>
+      <?php include_once('./partials/dashboard/footer.php'); ?>
         <!-- partial -->
       </div>
       <!-- main-panel ends -->
