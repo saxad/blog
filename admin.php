@@ -9,28 +9,31 @@ try {
     if(isset($_GET['action'])){
         //die($_GET['action']);
         if($_GET['action'] == 'main'){
-            include_once('./view/admin/dash.php');
+            admin_main();
         }
-        elseif($_GET['action'] == 'posts'){
+        elseif($_GET['action'] == 'post'){
             // category id
-            if(isset($_GET['category_id']) && $_GET['category_id'] > 0){
+            admin_post();
+            /*if(isset($_GET['category_id']) && $_GET['category_id'] > 0){
                 posts($_GET['category_id']);
             }
             else{
                 throw new Exception("Pas de post trouvé pour cette categorie", 1);
                 
-            }
+            }*/
         }
-        elseif($_GET['action'] == 'post'){
+        elseif($_GET['action'] == 'category'){
             // post id
-            if(isset($_GET['post_id']) && $_GET['post_id'] > 0){
+            /*if(isset($_GET['post_id']) && $_GET['post_id'] > 0){
                 post($_GET['post_id']);
             }
             else{
                 throw new Exception("pas de post avec cette id ", 1);
                 
-            }
+            }*/
+            admin_category();
         }
+        
         elseif($_GET['action'] == 'login'){
                 login();
         }

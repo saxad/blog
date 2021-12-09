@@ -2,9 +2,11 @@
 
     use Zio\Model\Admin\Login;
     use Zio\App\Database;
+    use Zio\Model\Category;
+    use Zio\Model\Post;
 
     function login(){
-        include_once('./view/admin/login.php');
+        include_once('./view/admin/loginView.php');
     }
 
     function authentification_controller($user,$password){
@@ -20,8 +22,28 @@
             header('Location: admin.php?action=main');
         }
         else{
-            include_once('./view/admin/login.php');
+            include_once('./view/admin/loginView.php');
         }
         
     }
-    
+
+    function admin_main(){
+        session_start();
+        $db = new Database('127.0.0.1', 'phpmyadmin', 'root', 'blog');
+        $post = new Post($db);
+        $category = new Category($db);
+
+        $posts = $post->getPosts();
+        $categories = $category->getCategories();
+        
+        include_once('./view/admin/dash.php');
+    }
+
+    function admin_post(){
+        include_once('./view/admin/postView.php');
+    }
+
+    function admin_category()
+    {
+        include_once('./view/admin/categoryView.php');
+    }
