@@ -28,5 +28,11 @@ class Category{
         //die();
         return $category;
     }
+
+    public function removeCategory($category_id){
+        $query = 'DELETE  from category where id=?';
+        $result = $this->db->prepare($query, [$category_id], 'delete');
+        return $result;
+    }
     
 }

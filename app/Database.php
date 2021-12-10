@@ -43,10 +43,16 @@ class Database{
         return $result;
     }
 
-    public function prepare($statment, $arg){
+    public function prepare($statment, $arg, $action=''){
         $req = $this->getPDO()->prepare($statment);
-        $req->execute($arg);
-        $result = $req->fetchAll(PDO::FETCH_CLASS);
+        $bool_result = $req->execute($arg);
+        if($action === 'delete'){
+            return $bool_result;
+        }
+        else{
+            $result = $req->fetchAll(PDO::FETCH_CLASS);
+        }
+        
         return $result;
     }
 

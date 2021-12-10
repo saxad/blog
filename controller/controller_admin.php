@@ -35,15 +35,57 @@
 
         $posts = $post->getPosts();
         $categories = $category->getCategories();
-        
+
         include_once('./view/admin/dash.php');
     }
 
-    function admin_post(){
+    function admin_post($id=null){
+        $db = new Database('127.0.0.1', 'phpmyadmin', 'root', 'blog');
+        $category = new Category($db);
+        $categories = $category->getCategories();
+        if($id == null){
+            $post_title = '';
+            $post_body = '';
+            $post_category_id = '';
+            $post_id = '';
+        }
+        else{
+            $post = new Post($db);
+            $result = $post->getPost($id);
+            $post_title = $result[0]->title;
+            $post_body = $result[0]->body;
+            $post_category_id = $result[0]->category_id;
+            $post_id = $result[0]->id;
+        }
         include_once('./view/admin/postView.php');
+        
     }
 
-    function admin_category()
-    {
+    function admin_category($id=null){
+        if($id == null){
+            $category_name = '';
+            $category_id = '';
+        }
+        else{
+            $db = new Database('127.0.0.1', 'phpmyadmin', 'root', 'blog');
+            $category = new Category($db);
+            $result = $category->getCategory($id);
+            $category_name = $result[0]->name;
+            $category_id = $result[0]->id;
+        }
         include_once('./view/admin/categoryView.php');
+    }
+
+    function delete_category($category_id){
+        $db = new Database('127.0.0.1', 'phpmyadmin', 'root', 'blog');
+        $category = new Category($db);
+        $category->removeCategory($category_id);
+        header('Location: admin.php?action=main');
+    }
+
+    function delete_post($post_id){
+        $db = new Database('127.0.0.1', 'phpmyadmin', 'root', 'blog');
+        $post = new Post($db);
+        $post->removePost($post_id);
+        header('Location: admin.php?action=main');
     }

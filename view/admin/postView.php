@@ -91,13 +91,13 @@
                     <input type="hidden" class="form-control" name="id" id="exampleInputUsername1"   value="<?= $row->id?>">
                       <div class="form-group">
                         <label for="exampleInputUsername1">title</label>
-                        <input type="text" name="title" class="form-control" id="exampleInputUsername1" placeholder="Username" value="<?= $row->title?>">
+                        <input type="text" name="title" class="form-control" id="exampleInputUsername1" placeholder="Username" value="<?= $post_title?>">
                       </div>
                       <div class="form-group">
                         <label for="exampleSelectGender">Categories</label>
                           <select class="form-control" id="exampleSelectGender" name="category">
-                            <?php for ($i=0; $i < count($category_rows) ; $i++) {  ?>
-                              <option <?php if($category_rows[$i]->id == $row->category_id){echo 'selected';}?> <?php echo 'value="'.$category_rows[$i]->id.'"'; ?>  > <?= $category_rows[$i]->name?> </option>
+                            <?php for ($i=0; $i < count($categories) ; $i++) {  ?>
+                              <option <?php if($post_category_id == $categories[$i]->id){echo 'selected';}?> <?php echo 'value="'.$categories[$i]->id.'"'; ?>  > <?= $categories[$i]->name?> </option>
                             <?php }?>
                             
                             
@@ -105,7 +105,7 @@
                         </div>
                       <div class="form-group">
                         <label for="exampleTextarea1" >Textarea</label>
-                        <textarea class="form-control" id="exampleTextarea1" rows="4" name="body"><?= $row->body;?></textarea>
+                        <textarea class="form-control" id="exampleTextarea1" rows="4" name="body"><?= $post_body;?></textarea>
                       </div>
                       <button type="submit" class="btn btn-primary mr-2">Submit</button>
                       <button class="btn btn-light">Cancel</button>

@@ -13,7 +13,12 @@ try {
         }
         elseif($_GET['action'] == 'post'){
             // category id
-            admin_post();
+            if(isset($_GET['id'])){
+                admin_post($_GET['id']);    
+            }
+            else{
+                admin_post();
+            }
             /*if(isset($_GET['category_id']) && $_GET['category_id'] > 0){
                 posts($_GET['category_id']);
             }
@@ -31,13 +36,30 @@ try {
                 throw new Exception("pas de post avec cette id ", 1);
                 
             }*/
-            admin_category();
+            if(isset($_GET['id'])){
+                admin_category($_GET['id']);    
+            }
+            else{
+                admin_category();
+            }
+            
         }
         
         elseif($_GET['action'] == 'login'){
                 login();
         }
-        
+        elseif($_GET['action'] == 'delete_category'){
+            
+            if(isset($_GET['id']) && $_GET['id']>0){
+                delete_category($_GET['id']);
+            }
+        }
+        elseif($_GET['action'] == 'delete_post'){
+            if(isset($_GET['id']) && $_GET['id']>0){
+                delete_post($_GET['id']);
+            }
+            
+        }
         else{
             echo "action not handled";
         }

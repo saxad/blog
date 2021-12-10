@@ -31,4 +31,10 @@ class Post{
         return $post;
     }
 
+    public function removePost($post_id){
+        $query = 'DELETE  from post where id=?';
+        $result = $this->db->prepare($query, [$post_id], 'delete');
+        return $result;
+    }
+
 }

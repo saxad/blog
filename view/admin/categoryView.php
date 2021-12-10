@@ -68,9 +68,9 @@
                   <form class="forms-sample" method="post">
                     <div class="form-group">
                       <label for="exampleInputUsername1">Name</label>
-                      <input type="text" class="form-control"  name="name" id="exampleInputUsername1" placeholder="Username" <?php if (isset($_GET['id'])){ echo "value=\"$category_name->name\"";}?>>
+                      <input type="text" class="form-control"  name="name" id="exampleInputUsername1" placeholder="Username" value="<?= $category_name?>">
                       <?php if (isset($_GET['id'])){?>
-                      <input type="hidden"  name="id" id="exampleInputUserid1" <?php if (isset($_GET['id'])){ echo 'value="' .$_GET['id']. '"';}?>>
+                      <input type="hidden"  name="id" id="exampleInputUserid1" value="<?= $category_id?>">
                       <?php
                       }
                       ?>

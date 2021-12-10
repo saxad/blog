@@ -88,8 +88,8 @@ if(isset($_GET['id'])){
                               <td><?= $posts[$i]->created_at;?></td>
                               <td><?= $posts[$i]->created_at;?></td>
                               <td class=" ">
-                              <a href="./dashbord.php?id=<?= $posts[$i]->id;?>&type=post"><label class="badge badge-danger">delete</label></a> 
-                              <a href="./admin.php?action=post&post.php?id=<?= $posts[$i]->id;?>"><label class="badge badge-warning">update</label></a> 
+                              <a href="./admin.php?action=delete_post&id=<?= $posts[$i]->id;?>"><label class="badge badge-danger">delete</label></a> 
+                              <a href="./admin.php?action=post&id=<?= $posts[$i]->id;?>"><label class="badge badge-warning">update</label></a> 
                               </td>
                             </tr>
                           <?php
@@ -134,8 +134,8 @@ if(isset($_GET['id'])){
                               <td><?= $categories[$i]->id;?></td>
                               <td><?= $categories[$i]->id;?></td>
                               <td>
-                              <a href="./dashbord.php?id=<?= $categories[$i]->id;?>&type=category"><label class="badge badge-danger">delete</label></a> 
-                              <a href="./admin.php?action=category&categories.php?id=<?= $categories[$i]->id;?>"><label class="badge badge-warning">update</label></a> 
+                              <a href="./admin.php?action=delete_category&id=<?= $categories[$i]->id;?>"><label class="badge badge-danger">delete</label></a> 
+                              <a href="./admin.php?action=category&id=<?= $categories[$i]->id;?>"><label class="badge badge-warning">update</label></a> 
                               </td>
                    
                             </tr>
