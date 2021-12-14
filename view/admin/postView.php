@@ -87,8 +87,8 @@
                     <p class="card-description">
                       Basic form layout
                     </p>
-                    <form class="forms-sample" method="post">
-                    <input type="hidden" class="form-control" name="id" id="exampleInputUsername1"   value="<?= $row->id?>">
+                    <form class="forms-sample" method="post" action="admin.php?action=update_post"> 
+                    <input type="hidden" class="form-control" name="id" id="exampleInputUsername1"   value="<?= $post_id?>">
                       <div class="form-group">
                         <label for="exampleInputUsername1">title</label>
                         <input type="text" name="title" class="form-control" id="exampleInputUsername1" placeholder="Username" value="<?= $post_title?>">

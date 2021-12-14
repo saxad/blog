@@ -12,20 +12,21 @@ try {
             admin_main();
         }
         elseif($_GET['action'] == 'post'){
-            // category id
+            // post id
             if(isset($_GET['id'])){
                 admin_post($_GET['id']);    
             }
             else{
                 admin_post();
             }
-            /*if(isset($_GET['category_id']) && $_GET['category_id'] > 0){
-                posts($_GET['category_id']);
+        }
+        elseif($_GET['action'] == 'update_post'){
+            if(isset($_POST['id']) && isset($_POST['title']) && isset($_POST['category']) && isset($_POST['body'])){
+                update_post($_POST['id'], $_POST['category'], $_POST['body'], strval($_POST['title']));
             }
             else{
-                throw new Exception("Pas de post trouvé pour cette categorie", 1);
-                
-            }*/
+                echo 'erreur une des entré n\'est  pas renseignée ';
+            }
         }
         elseif($_GET['action'] == 'category'){
             // post id

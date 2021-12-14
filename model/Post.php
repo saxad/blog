@@ -37,4 +37,10 @@ class Post{
         return $result;
     }
 
+    public function updatePost($post_id, $category_id, $body, $title){
+        $query = 'UPDATE  post  SET category_id=?, body=?, title=? where id=?';
+        $result = $this->db->prepare($query, [$category_id, $body, $title, $post_id], 'delete');
+        return $result;
+    }
+
 }

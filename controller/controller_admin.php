@@ -89,3 +89,10 @@
         $post->removePost($post_id);
         header('Location: admin.php?action=main');
     }
+
+    function update_post($post_id, $category_id, $body, $post_title){
+        $db = new Database('127.0.0.1', 'phpmyadmin', 'root', 'blog');
+        $post = new Post($db);
+        $post->updatePost($post_id, $category_id, $body, $post_title);
+        header('Location: admin.php?action=post&id='.$post_id);
+    }
