@@ -65,7 +65,7 @@
                   <p class="card-description">
                     Basic form layout
                   </p>
-                  <form class="forms-sample" method="post">
+                  <form class="forms-sample" method="post" action="admin.php?action=update_category">
                     <div class="form-group">
                       <label for="exampleInputUsername1">Name</label>
                       <input type="text" class="form-control"  name="name" id="exampleInputUsername1" placeholder="Username" value="<?= $category_name?>">

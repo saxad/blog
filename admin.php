@@ -46,6 +46,17 @@ try {
             
         }
         
+        elseif($_GET['action'] == 'update_category'){
+            
+            if(isset($_POST['id']) && isset($_POST['name'])){
+                update_category($_POST['id'], $_POST['name']);    
+            }
+            else{
+                echo 'entrée non valide';
+            }
+            
+        }
+
         elseif($_GET['action'] == 'login'){
                 login();
         }

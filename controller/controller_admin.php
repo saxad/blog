@@ -96,3 +96,10 @@
         $post->updatePost($post_id, $category_id, $body, $post_title);
         header('Location: admin.php?action=post&id='.$post_id);
     }
+
+    function update_category($category_id, $category_name){
+        $db = new Database('127.0.0.1', 'phpmyadmin', 'root', 'blog');
+        $category = new Category($db);
+        $category->updateCategory($category_id, $category_name);
+        header('Location: admin.php?action=category&id='.$category_id);
+    }

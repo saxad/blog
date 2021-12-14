@@ -34,5 +34,11 @@ class Category{
         $result = $this->db->prepare($query, [$category_id], 'delete');
         return $result;
     }
+
+    public function updateCategory($category_id, $category_name){
+        $query = 'UPDATE  category SET name=? where id=?';
+        $result = $this->db->prepare($query, [$category_name, $category_id], 'delete');
+        return $result;
+    }
     
 }
