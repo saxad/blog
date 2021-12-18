@@ -76,6 +76,9 @@ try {
             }
             
         }
+        elseif($_GET['action'] == 'logout'){
+            logout();
+        }
         else{
             echo "action not handled";
         }

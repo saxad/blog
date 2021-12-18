@@ -22,7 +22,7 @@
         <ul class="navbar-nav navbar-nav-right">
 
           <li class="nav-item nav-profile dropdown">
-            <a class="nav-link dropdown-toggle" href="../../blog/logout.php" data-toggle="dropdown" id="profileDropdown">
+            <a class="nav-link dropdown-toggle" href="admin.php?action=logout" data-toggle="dropdown" id="profileDropdown">
               <img src="public/images/dashboard/faces/face28.jpg" alt="profile" />
             </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">

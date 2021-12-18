@@ -1,4 +1,4 @@
-<?php
+
 // Initialize the session
 session_start();
  
@@ -9,6 +9,5 @@ $_SESSION = array();
 session_destroy();
  
 // Redirect to login page
-header("location: login.php");
+header("location: index.php?action=login");
 exit;
-?>
