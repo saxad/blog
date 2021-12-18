@@ -43,4 +43,10 @@ class Post{
         return $result;
     }
 
+    public function insertPost($category_id, $body, $post_title){
+        $query = 'INSERT INTO  post(category_id, body, title)  VALUES(?,?,?)';
+        $result = $this->db->prepare($query, [$category_id, $body, $post_title], 'delete');
+        return $result;
+    }
+
 }

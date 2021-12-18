@@ -40,5 +40,11 @@ class Category{
         $result = $this->db->prepare($query, [$category_name, $category_id], 'delete');
         return $result;
     }
+
+    public function insertCategory($category_name){
+        $query = 'INSERT  INTO category(name) VALUES(?)';
+        $result = $this->db->prepare($query, [$category_name], 'delete');
+        return $result;
+    }
     
 }

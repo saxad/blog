@@ -103,3 +103,17 @@
         $category->updateCategory($category_id, $category_name);
         header('Location: admin.php?action=category&id='.$category_id);
     }
+
+    function insert_category($category_name){
+        $db = new Database('127.0.0.1', 'phpmyadmin', 'root', 'blog');
+        $category = new Category($db);
+        $category->insertCategory($category_name);
+        header('Location: admin.php?action=main');
+    }
+
+    function insert_post($category_id, $body, $post_title){
+        $db = new Database('127.0.0.1', 'phpmyadmin', 'root', 'blog');
+        $post = new Post($db);
+        $post->insertPost($category_id, $body, $post_title);
+        header('Location: admin.php?action=main');
+    }

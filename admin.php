@@ -21,8 +21,11 @@ try {
             }
         }
         elseif($_GET['action'] == 'update_post'){
-            if(isset($_POST['id']) && isset($_POST['title']) && isset($_POST['category']) && isset($_POST['body'])){
+            if(isset($_POST['id']) && $_POST['id']!="" && isset($_POST['title']) && isset($_POST['category']) && isset($_POST['body'])){
                 update_post($_POST['id'], $_POST['category'], $_POST['body'], strval($_POST['title']));
+            }
+            elseif($_POST['id'] == "" && isset($_POST['title']) && isset($_POST['category']) && isset($_POST['body'])){
+                insert_post($_POST['category'], $_POST['body'], strval($_POST['title']));
             }
             else{
                 echo 'erreur une des entré n\'est  pas renseignée ';
@@ -44,19 +47,20 @@ try {
                 admin_category();
             }
             
-        }
-        
+        }       
         elseif($_GET['action'] == 'update_category'){
             
             if(isset($_POST['id']) && isset($_POST['name'])){
                 update_category($_POST['id'], $_POST['name']);    
+            }
+            elseif(isset($_POST['name'])){
+                insert_category($_POST['name']);    
             }
             else{
                 echo 'entrée non valide';
             }
             
         }
-
         elseif($_GET['action'] == 'login'){
                 login();
         }
